@@ -3,17 +3,17 @@ Attribute VB_Name = "Module1"
 Option Explicit
 
 Sub sample6()
-    Dim file As String                      'ŠJ‚¢‚½Analysis‚Ìƒtƒ@ƒCƒ‹–¼‘O
-    Dim i As Long: i = 1                'ƒZƒ‹”Ô’n
-    Dim filePath As String             'ƒtƒ@ƒCƒ‹‚ÌƒpƒX
-    Dim opnAls As Workbook       'ŠJ‚¢‚½AnalysisƒuƒbƒN
-    Dim WS As Worksheet             'ƒ[ƒNƒV[ƒg
-    Dim find_name As String        'Sheet1‚ğ’T‚·•Ï”
-    Dim flg As Boolean                 'Sheet1‚ª‚ ‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
-    Dim fileNum As Long             'Analysis‚Ìƒtƒ@ƒCƒ‹”Ô†
-    Dim newSheet As Worksheet 'VƒuƒbƒN
-    Dim newSheetName As String  'VƒuƒbƒN‚Ì–¼‘O
-    Dim rptName As String            'ƒŒƒ|[ƒg’ •[–¼
+    Dim file As String                      'é–‹ã„ãŸAnalysisã®ãƒ•ã‚¡ã‚¤ãƒ«åå‰
+    Dim i As Long: i = 1                    'ã‚»ãƒ«ç•ªåœ°
+    Dim filePath As String                  'ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
+    Dim opnAls As Workbook                  'é–‹ã„ãŸAnalysisãƒ–ãƒƒã‚¯
+    Dim WS As Worksheet                     'ãƒ¯ãƒ¼ã‚¯ã‚·ãƒ¼ãƒˆ
+    Dim find_name As String                 'Sheet1ã‚’æ¢ã™å¤‰æ•°
+    Dim flg As Boolean                      'Sheet1ãŒã‚ã‚‹ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°
+    Dim fileNum As Long                     'Analysisã®ãƒ•ã‚¡ã‚¤ãƒ«ç•ªå·
+    Dim newSheet As Worksheet               'æ–°ãƒ–ãƒƒã‚¯
+    Dim newSheetName As String              'æ–°ãƒ–ãƒƒã‚¯ã®åå‰
+    Dim rptName As String                   'ãƒ¬ãƒãƒ¼ãƒˆå¸³ç¥¨å
     Dim techKey() As String
     Dim prmptName() As String
     Dim alsWs As Worksheet
@@ -21,102 +21,102 @@ Sub sample6()
     Dim lstNum As Long
     
     
-    'Application.ScreenUpdating = False
-    filePath = ThisWorkbook.Worksheets("Sheet1").Range("E3").Value & "\" 'E3‚Åƒtƒ@ƒCƒ‹ƒpƒX‚ğæ“¾
-    file = Dir(filePath & "*.xlsx") 'ƒpƒX”z‰ºŠg’£qu.xlsxv‚ÌÅ‰‚Ìƒtƒ@ƒCƒ‹–¼‚ğæ“¾
+    filePath = ThisWorkbook.Worksheets("Sheet1").Range("E3").Value & "\" 'E3ã§ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‚’å–å¾—
+    file = Dir(filePath & "*.xlsx") 'ãƒ‘ã‚¹é…ä¸‹æ‹¡å¼µå­ã€Œ.xlsxã€ã®æœ€åˆã®ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å–å¾—
     find_name = "Sheet2"
     flg = False
     
-       '-----------------ƒtƒHƒ‹ƒ_“à‚ÌƒuƒbƒNŒJ‚è•Ô‚µŠJ‚­ˆ—-----------------
+       '-----------------ãƒ•ã‚©ãƒ«ãƒ€å†…ã®ãƒ–ãƒƒã‚¯ç¹°ã‚Šè¿”ã—é–‹ãå‡¦ç†-----------------
     
     Do While file <> ""
     
-        '-----------------‚±‚ÌƒuƒbƒN‚ÉSheet2‚ª‚ ‚é‚©‚Ç‚¤‚©-----------------
+        '-----------------ã“ã®ãƒ–ãƒƒã‚¯ã«Sheet2ãŒã‚ã‚‹ã‹ã©ã†ã‹-----------------
         
             For Each WS In ThisWorkbook.Worksheets
-            'ws‚Ì–¼‘O‚ªfind_name("Sheet2")‚Æ“¯‚¶‚¾‚Á‚½‚ç
-                If WS.name = find_name Then flg = True 'flg‚ğtrue‚É
+            'wsã®åå‰ãŒfind_name("Sheet2")ã¨åŒã˜ã ã£ãŸã‚‰
+                If WS.name = find_name Then flg = True 'flgã‚’trueã«
             Next WS
             
-        '-----------------Sheet2‚ª‚ ‚ê‚Î---------------------------------
-        fileNum = Left(file, 4)     'ƒtƒ@ƒCƒ‹–¼‚Ì“ª‚SŒ…‚ğæ“¾A‚Â‚Ü‚èŠÇ—”Ô†
+        '-----------------Sheet2ãŒã‚ã‚Œã°---------------------------------
+        fileNum = Left(file, 4)     'ãƒ•ã‚¡ã‚¤ãƒ«åã®é ­ï¼”æ¡ã‚’å–å¾—ã€ã¤ã¾ã‚Šç®¡ç†ç•ªå·
             If flg = True Then
                 Dim p, s, d1, d2 As Long
                 s = ThisWorkbook.Worksheets("Sheet2").Cells(1, 1).End(xlDown).row
                 d1 = ThisWorkbook.Worksheets("Sheet2").Cells(1, 1).Value
                 If d1 = fileNum Then
-                     GoTo Label1  'ŠJ‚©‚¸‚É”ò‚Ô
+                     GoTo Label1  'é–‹ã‹ãšã«é£›ã¶
                 End If
             
                 For p = 2 To s
                 d2 = ThisWorkbook.Worksheets("Sheet2").Cells(p, 1).Value
                 If d2 = fileNum Then
-                    GoTo Label1 'ŠJ‚©‚¸‚É”ò‚Ô
+                    GoTo Label1 'é–‹ã‹ãšã«é£›ã¶
                 End If
                 Next p
             End If
 
         flg = False
-        Set opnAls = Workbooks.Open(filePath & file) 'AnalysisŠY“–ƒuƒbƒN‚ğŠJ‚«opnAls‚É“ü‚ê‚é
-        'Set opnAls = Workbooks.Open(filePath & "0914_´×½Úİ”Ì”„ÀÑ‡D‘’Ç‰Á_? ‰F_—l_”Ì”„ŠÇ— .xlsx") 'AnalysisŠY“–ƒuƒbƒN‚ğŠJ‚«opnAls‚É“ü‚ê‚é
-        file = opnAls.name          'AnalysisŠY“–ƒuƒbƒN(opnAls)‚Ìƒtƒ@ƒCƒ‹–¼‚ğæ“¾
-'        fileNum = Left(file, 4)     'ƒtƒ@ƒCƒ‹–¼‚Ì“ª‚SŒ…‚ğæ“¾
+        Set opnAls = Workbooks.Open(filePath & file) 'Analysisè©²å½“ãƒ–ãƒƒã‚¯ã‚’é–‹ãopnAlsã«å…¥ã‚Œã‚‹
+        file = opnAls.name          'Analysisè©²å½“ãƒ–ãƒƒã‚¯(opnAls)ã®ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å–å¾—
+'        fileNum = Left(file, 4)     'ãƒ•ã‚¡ã‚¤ãƒ«åã®é ­ï¼”æ¡ã‚’å–å¾—
 
          
-                'rptName = opnAls.Worksheets("Sheet1").Cells(1, 1).Value 'ŠY“–ƒtƒ@ƒCƒ‹‚ÌA1‚Ì’l‚ğæ“¾
+                'rptName = opnAls.Worksheets("Sheet1").Cells(1, 1).Value 'è©²å½“ãƒ•ã‚¡ã‚¤ãƒ«ã®A1ã®å€¤ã‚’å–å¾—
                 Dim lResult As Variant
                 lResult = Application.Run("SAPGetSourceInfo", "DS_1", "DataSourceName")
                 Dim Worksheet As Worksheet, flag As Boolean
                 flag = False
                                 
                 Dim del As String
-                del = "_" ' ƒAƒ“ƒ_[ƒXƒRƒA‚ğ’T‚·
+                del = "_" ' ã‚¢ãƒ³ãƒ€ãƒ¼ã‚¹ã‚³ã‚¢ã‚’æ¢ã™
                 Dim a As String
-                a = InStrRev(file, del)  'ÅŒã‚Ì"_"‚ÌˆÊ’u‚ğæ“¾
+                a = InStrRev(file, del)  'æœ€å¾Œã®"_"ã®ä½ç½®ã‚’å–å¾—
                 Dim b As String
-                b = Len(file)    'file–¼‚Ì’·‚³‚ğæ“¾
+                b = Len(file)    'fileåã®é•·ã•ã‚’å–å¾—
                 Dim c As String
-                c = b - a  'file–¼‚©‚çÅŒã‚ÌƒAƒ“ƒXƒR‚ÌˆÊ’u‚ğˆø‚­
+                c = b - a  'fileåã‹ã‚‰æœ€å¾Œã®ã‚¢ãƒ³ã‚¹ã‚³ã®ä½ç½®ã‚’å¼•ã
                 
                 Debug.Print InStrRev(file, del)
                 Dim fileLastNm As String
-                fileLastNm = Right(file, c) 'right‚ÅÅŒã‚ÌƒAƒ“ƒXƒR‚ÌŒã‚ë‚ğæ“¾
-                
+                fileLastNm = Right(file, c) 'rightã§æœ€å¾Œã®ã‚¢ãƒ³ã‚¹ã‚³ã®å¾Œã‚ã‚’å–å¾—
+    
+                'Sheet2ãŒãªã‘ã‚Œã°Sheet2ã‚’ä½œã‚‹
                 For Each Worksheet In ThisWorkbook.Worksheets
                     If Worksheet.name = "Sheet2" Then flag = True
                 Next Worksheet
                 If flag = False Then
-                    Set newSheet = ThisWorkbook.Worksheets.Add 'VƒV[ƒgì¬‚µnewBook‚É‘ã“ü
-                    newSheet.name = "Sheet2" 'VƒV[ƒg‚Ì–¼‘O‚ğæ“¾
+                    Set newSheet = ThisWorkbook.Worksheets.Add 'æ–°ã‚·ãƒ¼ãƒˆä½œæˆã—newBookã«ä»£å…¥
+                    newSheet.name = "Sheet2" 'æ–°ã‚·ãƒ¼ãƒˆã®åå‰ã‚’å–å¾—
                     newSheetName = newSheet.name
                 End If
                     
                 Set newSheet = ThisWorkbook.Worksheets(1)
-
-                If newSheet.Cells(i, 2).Value = "" And newSheet.Cells(i, 1).Value = "" And newSheet.Cells(i, 3).Value = "" Then  'V‹Kì¬‚µ‚½newBook‚ÌƒV[ƒg‚P‚ÌA1‚Ì’l‚ªnull‚¾‚Á‚½‚ç
-                    newSheet.Cells(i, 2).Value = lResult 'rptName‚ğVƒuƒbƒN‚ÌA1‚Éo—Í
+                
+                'Sheet2ã«Analysisã®å¸³ç¥¨åã¨ãƒŠãƒ³ãƒãƒ¼ã€ãƒ•ã‚¡ã‚¤ãƒ«ã®å¸³ç¥¨åã‚’è»¢è¨˜ã™ã‚‹
+                If newSheet.Cells(i, 2).Value = "" And newSheet.Cells(i, 1).Value = "" And newSheet.Cells(i, 3).Value = "" Then  'æ–°è¦ä½œæˆã—ãŸnewBookã®ã‚·ãƒ¼ãƒˆï¼‘ã®A1ã®å€¤ãŒnullã ã£ãŸã‚‰
+                    newSheet.Cells(i, 2).Value = lResult 'rptNameã‚’æ–°ãƒ–ãƒƒã‚¯ã®A1ã«å‡ºåŠ›
                     newSheet.Cells(i, 1).Value = Format(fileNum, "0000")
                     newSheet.Cells(i, 3).Value = fileLastNm
                 Else
                     i = newSheet.Cells(1, 1).End(xlDown).row + 1
                     Debug.Print i
-                    newSheet.Cells(i, 2).Value = lResult 'rptName‚ğVƒuƒbƒN‚ÌA1‚Éo—Í
+                    newSheet.Cells(i, 2).Value = lResult 'rptNameã‚’æ–°ãƒ–ãƒƒã‚¯ã®A1ã«å‡ºåŠ›
                     newSheet.Cells(i, 1).Value = Format(fileNum, "0000")
                     newSheet.Cells(i, 3).Value = fileLastNm
                 End If
 
-                i = i + 1 'ƒCƒ“ƒNƒŠƒƒ“ƒg‚µ‚ÄAˆês‰º‚Éo—Í‚·‚éB
+                i = i + 1 'ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆã—ã¦ã€ä¸€è¡Œä¸‹ã«å‡ºåŠ›ã™ã‚‹ã€‚
 '            On Error Resume Next
             Set alsWs = opnAls.Worksheets(1)
 '
-'          'newSheet‚ÌÅŒã‚Ìs‚ğæ“¾
+'          'newSheetã®æœ€å¾Œã®è¡Œã‚’å–å¾—
            lstNum = getLastRow(newSheet)
             
            Debug.Print lstNum
            
 '            Dim flagflag As Boolean
 '            flagflag = False
-'            'Sheet2‚ÌA—ñ‚ªƒtƒ@ƒCƒ‹–¼‚É‚ ‚Á‚½‚ç
+'            'Sheet2ã®Aåˆ—ãŒãƒ•ã‚¡ã‚¤ãƒ«åã«ã‚ã£ãŸã‚‰
 '            Dim p As Long
 '            Dim a As String
 '            For p = 1 To lstNum
@@ -136,20 +136,20 @@ Sub sample6()
 '           result = Filter(testArray, fileNum)
 '
 '           If (UBound(result) <> -1) Then
-'               Debug.Print fileNum & "‚ğŠÜ‚Ş”z—ñ‚Í‘¶İ‚·‚é"
+'               Debug.Print fileNum & "ã‚’å«ã‚€é…åˆ—ã¯å­˜åœ¨ã™ã‚‹"
 '           Else
-'                Debug.Print fileNum & "‚ğŠÜ‚Ş”z—ñ‚Í‘¶İ‚µ‚Ü‚¹‚ñ"
+'                Debug.Print fileNum & "ã‚’å«ã‚€é…åˆ—ã¯å­˜åœ¨ã—ã¾ã›ã‚“"
 '           End If
            
 '           Dim varResult
 '           varResult = Filter(testArray, fileNum)
 '
 '           If UBound(varResult) <> -1 Then
-'                Debug.Print file & "‚Í”z—ñ“à‚É‘¶İ‚·‚é"
+'                Debug.Print file & "ã¯é…åˆ—å†…ã«å­˜åœ¨ã™ã‚‹"
 '           Else
-'                Debug.Print file & "‚Í”z—ñ“à‚É‘¶İ‚µ‚È‚¢"
+'                Debug.Print file & "ã¯é…åˆ—å†…ã«å­˜åœ¨ã—ãªã„"
 '           End If
-'‚±‚±‚©‚ç
+'ã“ã“ã‹ã‚‰
 '           Debug.Print UBound(testArray) '6
 '           Debug.Print LBound(testArray)   '1
 '           'newBook.Worksheets("Sheet1").Range("C1", Cells(LBound(testArray, 1), UBound(testArray, 1))).Value = testArray
@@ -158,11 +158,11 @@ Sub sample6()
 '           For k = 3 To lstNum - 1
 '               newBook.Worksheets("Sheet1").Cells(1, k).Value = testArray(l)
 '           Next k
-'‚±‚±‚Ü‚Å‚â‚Á‚Ä‚¢‚é“r’†
+'ã“ã“ã¾ã§ã‚„ã£ã¦ã„ã‚‹é€”ä¸­
 
 
         DoEvents
-        Workbooks(file).Close SaveChanges:=False  '—§‚¿ã‚°‚½AnalysisƒuƒbƒN‚ğ•Û‘¶‚µ‚È‚¢‚Å•Â‚¶‚é
+        Workbooks(file).Close SaveChanges:=False  'ç«‹ã¡ä¸Šã’ãŸAnalysisãƒ–ãƒƒã‚¯ã‚’ä¿å­˜ã—ãªã„ã§é–‰ã˜ã‚‹
 Label1:
         file = Dir
         ThisWorkbook.Save
@@ -170,16 +170,16 @@ Label1:
     
     'Call find_NA
     
-    'A1‚ğƒL[‚É‚µ‚Ä¸‡‚É‚·‚é
+    'A1ã‚’ã‚­ãƒ¼ã«ã—ã¦æ˜‡é †ã«ã™ã‚‹
     Call Range("A:C").Sort( _
     Key1:=Range("A1"), _
     Order1:=xlAscending)
     
-    MsgBox "I‚í‚è‚Å‚²‚´‚é"
+    MsgBox "çµ‚ã‚ã‚Šã§ã”ã–ã‚‹"
     'Application.ScreenUpdating = True
 End Sub
 
-'’ •[ƒuƒƒbƒN‚ÌÅIs‚ğæ“¾‚·‚éƒƒ\ƒbƒh
+'å¸³ç¥¨ãƒ–ãƒ­ãƒƒã‚¯ã®æœ€çµ‚è¡Œã‚’å–å¾—ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 Function getLastRow(WS As Worksheet, Optional CheckCol As Long = 1) As Long
     getLastRow = WS.Cells(1, CheckCol).End(xlDown).row
 End Function
@@ -192,7 +192,7 @@ Public Function find_NA()
     Dim newSheet As Worksheet
     Dim lstNum As Long
     Dim i As Long
-    filePath = ThisWorkbook.Worksheets("Sheet1").Range("E3").Value & "\" 'E3‚Åƒtƒ@ƒCƒ‹ƒpƒX‚ğæ“¾
+    filePath = ThisWorkbook.Worksheets("Sheet1").Range("E3").Value & "\" 'E3ã§ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã‚’å–å¾—
     Set newSheet = ThisWorkbook.Worksheets("Sheet2")
     lstNum = getLastRow(newSheet)
     For i = 1 To lstNum
